@@ -1,0 +1,13 @@
+transformers
+datasets
+evaluate
+accelerate
+scikit-learn
+tensorboard
+pandas
+jupyterlab
+ipywidgets
+ablang
+fair-esm
+rjieba
+sentencepiece
