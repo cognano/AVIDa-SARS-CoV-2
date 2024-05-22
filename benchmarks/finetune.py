@@ -90,7 +90,7 @@ def main(args):
         seed=args.seed,
         data_seed=args.seed,
         fp16=True,
-        evaluation_strategy="epoch",
+        eval_strategy="epoch",
         logging_strategy="epoch",
         logging_dir=os.path.join(args.save_dir, "logs", timestamp),
         save_strategy="epoch",

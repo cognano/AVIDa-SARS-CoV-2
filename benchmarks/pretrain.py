@@ -64,7 +64,7 @@ def main(args):
         seed=args.seed,
         data_seed=args.seed,
         fp16=True,
-        evaluation_strategy="steps",
+        eval_strategy="steps",
         eval_steps=EVAL_STEPS,
         logging_strategy="steps",
         logging_steps=EVAL_STEPS,
