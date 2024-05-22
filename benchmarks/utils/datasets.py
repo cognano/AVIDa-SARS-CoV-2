@@ -6,7 +6,7 @@ from transformers import (
 )
 
 
-def create_dataset(datasets, palm_type="VHHBERT", vocab_file=None):
+def create_dataset(datasets, palm_type="VHHBERT"):
     assert palm_type in (
         "VHHBERT",
         "VHHBERT-w/o-PT",
@@ -23,7 +23,7 @@ def create_dataset(datasets, palm_type="VHHBERT", vocab_file=None):
         return tokenized_datasets, tokenizer
     elif palm_type == "AbLang":
         tokenizer = BertTokenizerFast(
-            vocab_file=vocab_file,
+            vocab_file="./benchmarks/data/vocab_ablang.txt",
             do_lower_case=False,
             do_basic_tokenize=False,
             unk_token="<unk>",

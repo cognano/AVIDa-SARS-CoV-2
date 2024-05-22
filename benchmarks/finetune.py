@@ -28,9 +28,7 @@ def main(args):
     datasets["test"] = load_dataset("COGNANO/AVIDa-SARS-CoV-2", data_files={"test": "test.csv"})[
         "test"
     ]
-    tokenized_datasets, tokenizer = create_dataset(
-        datasets, palm_type=args.palm_type, vocab_file=args.vocab_file
-    )
+    tokenized_datasets, tokenizer = create_dataset(datasets, palm_type=args.palm_type)
     data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
 
     with open(args.embeddings_file, "rb") as f:
@@ -126,16 +124,10 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--vocab-file",
-        default=None,
-        type=str,
-        help="Path of the vocabulary file.",
-    )
-    parser.add_argument(
         "--embeddings-file",
-        default="./embeddings.pkl",
+        default="./benchmarks/data/embeddings.pkl",
         type=str,
-        help="Path of embeddings file (default: ./embeddings.pkl)",
+        help="Path of embeddings file (default: ./benchmarks/data/embeddings.pkl",
     )
     parser.add_argument(
         "--palm-type",
