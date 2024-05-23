@@ -46,7 +46,42 @@ pip install -r requirements.txt
 
 ### Pre-training
 
+```bash
+python benchmarks/pretrain.py --vocab-file "benchmarks/data/vocab_vhhbert.txt" \
+  --epochs 20 \
+  --batch-size 128 \
+  --save-dir "outputs"
+```
+
+**Arguments:**
+
+| Argument      | Required | Default   | Description                      |
+|---------------|----------|-----------|----------------------------------|
+| --vocab-file  | Yes      |           | Path of the vocabulary file      |
+| --epochs      | No       | 20        | Number of epochs                 |
+| --batch-size  | No       | 128       | Size of mini-batch               |
+| --seed        | No       | 123       | Random seed                      |
+| --save-dir    | No       | ./saved   | Path of the save directory       |
+
 ### Fine-tuning
+
+```bash
+python benchmarks/finetune.py --palm-type "VHHBERT" \
+  --epochs 30 \
+  --batch-size 32 \
+  --save-dir "outputs"
+```
+
+**Arguments:**
+
+| Argument          | Required | Default   | Description                                                                                                          |
+|-------------------|----------|-----------|----------------------------------------------------------------------------------------------------------------------|
+| --palm-type       | No       | VHHBERT   | Model name ("VHHBERT", "VHHBERT-w/o-PT", "AbLang", "AntiBERTa2", "AntiBERTa2-CSSP", "IgBert", "ProtBert" or "ESM-2") |
+| --embeddings-file | No       | ./benchmarks/data/antigen_embeddings.pkl | Path of embeddings file for antigens                                                  |
+| --epochs          | No       | 20        | Number of epochs                                                                                                     |
+| --batch-size      | No       | 128       | Size of mini-batch                                                                                                   |
+| --seed            | No       | 123       | Random seed                                                                                                          |
+| --save-dir        | No       | ./saved   | Path of the save directory                                                                                           |
 
 ## Citation
 
