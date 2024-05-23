@@ -37,7 +37,7 @@ def main(args):
         lambda examples: {"antigen_embeddings": embeddings_dict[examples["Ag_label"]]}
     )
     tokenized_datasets = tokenized_datasets.remove_columns(["Ag_label"])
-    model = PalmForBindingPrediction(palm_type=args.palm_type, model_path=args.model_path)
+    model = PalmForBindingPrediction(palm_type=args.palm_type)
 
     def compute_metrics(eval_pred):
         logits = torch.sigmoid(torch.tensor(eval_pred.predictions))
@@ -125,9 +125,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--embeddings-file",
-        default="./benchmarks/data/embeddings.pkl",
+        default="./benchmarks/data/antigen_embeddings.pkl",
         type=str,
-        help="Path of embeddings file (default: ./benchmarks/data/embeddings.pkl",
+        help="Path of embeddings file (default: ./benchmarks/data/antigen_embeddings.pkl",
     )
     parser.add_argument(
         "--palm-type",
