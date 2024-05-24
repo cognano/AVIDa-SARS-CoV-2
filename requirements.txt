@@ -11,3 +11,11 @@ ablang
 fair-esm
 rjieba
 sentencepiece
+annotated-types
+biopython
+fire
+polars
+pydantic
+pydantic-core
+termcolor
+typing-extensions

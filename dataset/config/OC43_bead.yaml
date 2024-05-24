@@ -1,0 +1,180 @@
+name: OC43_bead
+dataDirs:
+  - ../raw/fasta
+outDir: ../out
+deconflictStrategy:
+  type: relabel
+  from: non-binder
+  to: non-significant
+analysisUnits:
+  - name: OC43_bead_christy
+    fixedColumns:
+      Ag_label: OC43_bead
+      subject_name: christy
+      subject_sex: female
+      subject_species: alpaca
+    control:
+      - mother: MOTO-MOTHER-eta
+        target: Elt-ControlIgM-eta
+      - mother: MOTO-MOTHER-theta
+        target: Elt-ControlIgM-theta
+      - mother: MOTO-MOTHER-iota
+        target: Elt-ControlIgM-iota
+      - mother: MOTO-MOTHER-kappa
+        target: Elt-ControlIgM-kappa
+      - mother: MOTO-MOTHER-eta
+        target: Elt-Biotin-IgM-eta
+      - mother: MOTO-MOTHER-theta
+        target: Elt-Biotin-IgM-theta
+      - mother: MOTO-MOTHER-iota
+        target: Elt-Biotin-IgM-iota
+      - mother: MOTO-MOTHER-kappa
+        target: Elt-Biotin-IgM-kappa
+      - mother: MOTO-MOTHER-LGAMMA
+        target: IgM-LGAMMA
+      - mother: MOTO-MOTHER-LDELTA
+        target: IgM-LDELTA
+      - mother: MOTO-MOTHER-LTHETA
+        target: IgM-LTHETA
+      - mother: MOTO-MOTHER-LLAMBDA
+        target: IgM-LLAMBDA
+      - mother: MOTO-MOTHER-eta
+        target: DT40parent-eta
+      - mother: MOTO-MOTHER-theta
+        target: DT40parent-theta
+      - mother: MOTO-MOTHER-iota
+        target: DT40parent-iota
+      - mother: MOTO-MOTHER-kappa
+        target: DT40parent-kappa
+      - mother: MOTO-MOTHER-eta
+        target: DT40parent-eta-2
+      - mother: MOTO-MOTHER-theta
+        target: DT40parent-theta-2
+      - mother: MOTO-MOTHER-iota
+        target: DT40parent-iota-2
+      - mother: MOTO-MOTHER-kappa
+        target: DT40parent-kappa-2
+      - mother: MOTO-MOTHER-lambda
+        target: DT40parent-lambda
+      - mother: MOTO-MOTHER-LGAMMA
+        target: DT40parentLGAMMA
+      - mother: MOTO-MOTHER-LDELTA
+        target: DT40parentLDELTA
+      - mother: MOTO-MOTHER-LTHETA
+        target: DT40parentLTHETA
+      - mother: MOTO-MOTHER-LLAMBDA
+        target: DT40parentLLAMBDA
+      - mother: MOTO-MOTHER-eta
+        target: DT40-Parent-eta
+      - mother: MOTO-MOTHER-theta
+        target: DT40-Parent-theta
+      - mother: MOTO-MOTHER-iota
+        target: DT40-Parent-iota
+      - mother: MOTO-MOTHER-kappa
+        target: DT40-Parent-kappa
+      - mother: MOTO-MOTHER-lambda
+        target: DT40-Parent-lambda
+      - mother: MOTO-MOTHER-LGAMMA
+        target: DT40-Parent-LGAMMA
+      - mother: MOTO-MOTHER-LDELTA
+        target: DT40-Parent-LDELTA
+      - mother: MOTO-MOTHER-LTHETA
+        target: DT40-Parent-LTHETA
+      - mother: MOTO-MOTHER-LLAMBDA
+        target: DT40-Parent-LLAMBDA
+      - mother: MOTO-MOTHER-eta
+        target: BeadsA3G-eta-2
+      - mother: MOTO-MOTHER-theta
+        target: BeadsA3G-theta-2
+      - mother: MOTO-MOTHER-iota
+        target: BeadsA3G-iota-2
+      - mother: MOTO-MOTHER-kappa
+        target: BeadsA3G-kappa-2
+      - mother: MOTO-MOTHER-lambda
+        target: BeadsA3G-lambda
+      - mother: MOTO-MOTHER-LGAMMA
+        target: BeadsA3GLGAMMA
+      - mother: MOTO-MOTHER-LDELTA
+        target: BeadsA3GLDELTA
+      - mother: MOTO-MOTHER-LTHETA
+        target: BeadsA3GLTHETA
+      - mother: MOTO-MOTHER-LLAMBDA
+        target: BeadsA3GLLAMBDA
+    treatment:
+      - mother: MOTO-MOTHER-eta
+        target: BeadsColdS-eta-2
+      - mother: MOTO-MOTHER-theta
+        target: BeadsColdS-theta-2
+      - mother: MOTO-MOTHER-iota
+        target: BeadsColdS-iota-2
+      - mother: MOTO-MOTHER-kappa
+        target: BeadsColdS-kappa-2
+      - mother: MOTO-MOTHER-lambda
+        target: BeadsColdS-lambda
+      - mother: MOTO-MOTHER-LGAMMA
+        target: BeadsColdSLGAMMA
+      - mother: MOTO-MOTHER-LDELTA
+        target: BeadsColdSLDELTA
+      - mother: MOTO-MOTHER-LTHETA
+        target: BeadsColdSLTHETA
+      - mother: MOTO-MOTHER-LLAMBDA
+        target: BeadsColdSLLAMBDA
+    readonly: []
+
+  - name: OC43_bead_puta
+    fixedColumns:
+      Ag_label: OC43_bead
+      subject_name: puta
+      subject_sex: male
+      subject_species: alpaca
+    control:
+      - mother: MOTO-MOTHER-rho
+        target: IgM-rho
+      - mother: MOTO-MOTHER-sigma1
+        target: IgM-sigma1
+      - mother: MOTO-MOTHER-sigma2
+        target: IgM-sigma2
+      - mother: MOTO-MOTHER-tau
+        target: IgM-tau
+      - mother: MOTO-MOTHER-rho
+        target: DT40parent-rho
+      - mother: MOTO-MOTHER-sigma1
+        target: DT40parent-sigma
+      - mother: MOTO-MOTHER-sigma2
+        target: DT40parent-sigma2
+      - mother: MOTO-MOTHER-tau
+        target: DT40parent-tau
+      - mother: MOTO-MOTHER-upsilon
+        target: DT40parent-upsilon
+      - mother: MOTO-MOTHER-rho
+        target: DT40-Parent-rho
+      - mother:
+          - MOTO-MOTHER-sigma1
+          - MOTO-MOTHER-sigma2
+        target: DT40-Parent-sigma12
+      - mother: MOTO-MOTHER-tau
+        target: DT40-Parent-tau
+      - mother: MOTO-MOTHER-upsilon
+        target: DT40-Parent-upsilon
+      - mother: MOTO-MOTHER-rho
+        target: BeadsA3G-rho
+      - mother: MOTO-MOTHER-sigma1
+        target: BeadsA3G-sigma
+      - mother: MOTO-MOTHER-sigma2
+        target: BeadsA3G-sigmaTen
+      - mother: MOTO-MOTHER-tau
+        target: BeadsA3G-tau
+      - mother: MOTO-MOTHER-upsilon
+        target: BeadsA3G-upsilon
+    treatment:
+      - mother: MOTO-MOTHER-rho
+        target: BeadsColdS-rho
+      - mother: MOTO-MOTHER-sigma1
+        target: BeadsColdS-sigma
+      - mother: MOTO-MOTHER-sigma2
+        target: BeadsColdS-sigmaTen
+      - mother: MOTO-MOTHER-tau
+        target: BeadsColdS-tau
+      - mother: MOTO-MOTHER-upsilon
+        target: BeadsColdS-upsilon
+    readonly: []

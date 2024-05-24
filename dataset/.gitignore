@@ -1,0 +1,3 @@
+raw/**/*.fastq.gz
+raw/**/*.fasta
+out/*.csv

@@ -42,6 +42,18 @@ pip install -r requirements.txt
 
 ### Data Processing
 
+First, you need to create a Docker image.
+
+```bash
+docker build -t vhh_constructor:latest ./dataset/vhh_constructor
+```
+
+After placing the [FASTQ files](https://drive.google.com/drive/folders/151Njm6OE9G5m8vyzDcn8w8mWye8ULsYU?usp=sharing) under `dataset/raw/fastq`, execute the following command to output a labeled CSV file.
+
+```bash
+bash ./dataset/preprocess.sh
+```
+
 ## Benchmarks
 
 ### Pre-training
