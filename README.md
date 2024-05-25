@@ -12,16 +12,14 @@ Overview of data generation process for AVIDa-SARS-CoV-2.
 
 ## Table of Contents
 
-- [A SARS-CoV-2 Interaction Dataset and VHH Sequence Corpus for Antibody Language Models](#a-sars-cov-2-interaction-dataset-and-vhh-sequence-corpus-for-antibody-language-models)
-  - [Table of Contents](#table-of-contents)
-  - [Environment](#environment)
-  - [Datasets](#datasets)
-    - [Links](#links)
-    - [Data Processing](#data-processing)
-  - [Benchmarks](#benchmarks)
-    - [Pre-training](#pre-training)
-    - [Fine-tuning](#fine-tuning)
-  - [Citation](#citation)
+- [Environment](#environment)
+- [Datasets](#datasets)
+  - [Links](#links)
+  - [Data Processing](#data-processing)
+- [Benchmarks](#benchmarks)
+  - [Pre-training](#pre-training)
+  - [Fine-tuning](#fine-tuning)
+- [Citation](#citation)
 
 ## Environment
 
@@ -45,7 +43,7 @@ pip install -r requirements.txt
 ### Data Processing
 
 The code for converting the raw data (FASTQ file) obtained from next-generation sequencing (NGS) into the labeled dataset, AVIDa-SARS-CoV-2, can be found under `./dataset`.
-We released the FASTQ files for antigen type "OC43" [here]((https://drive.google.com/drive/folders/151Njm6OE9G5m8vyzDcn8w8mWye8ULsYU?usp=sharing)) so that the data processing can be reproduced.
+We released the FASTQ files for antigen type "OC43" [here](https://drive.google.com/drive/folders/151Njm6OE9G5m8vyzDcn8w8mWye8ULsYU?usp=sharing) so that the data processing can be reproduced.
 
 First, you need to create a Docker image.
 
