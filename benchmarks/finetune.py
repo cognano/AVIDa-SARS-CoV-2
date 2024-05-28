@@ -22,12 +22,10 @@ MAX_LENGTH = 185
 
 def main(args):
     timestamp = datetime.now().strftime(r"%Y%m%d_%H%M%S")
-    datasets = load_dataset("COGNANO/AVIDa-SARS-CoV-2", data_files={"train": "train.csv"})
+    datasets = load_dataset("COGNANO/AVIDa-SARS-CoV-2")
     datasets = datasets["train"].train_test_split(test_size=0.1, seed=args.seed)
-    datasets["valid"] = datasets["test"]
-    datasets["test"] = load_dataset("COGNANO/AVIDa-SARS-CoV-2", data_files={"test": "test.csv"})[
-        "test"
-    ]
+    datasets["validation"] = datasets["test"]
+    datasets["test"] = load_dataset("COGNANO/AVIDa-SARS-CoV-2", split="test")
     tokenized_datasets, tokenizer = create_dataset(datasets, palm_type=args.palm_type)
     data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
 
@@ -109,7 +107,7 @@ def main(args):
         model=model,
         args=training_args,
         train_dataset=tokenized_datasets["train"],
-        eval_dataset=tokenized_datasets["valid"],
+        eval_dataset=tokenized_datasets["validation"],
         data_collator=data_collator,
         compute_metrics=compute_metrics,
         callbacks=[EarlyStoppingCallback(early_stopping_patience=5)],

@@ -36,7 +36,7 @@ def main(args):
         "COGNANO/VHHCorpus-2M",
         data_files={
             "train": "train.csv",
-            "valid": "valid.csv",
+            "validation": "valid.csv",
         },
     )
     datasets = datasets.map(lambda examples: {"VHH_sequence": " ".join(examples["VHH_sequence"])})
@@ -99,7 +99,7 @@ def main(args):
         model=model,
         args=training_args,
         train_dataset=tokenized_datasets["train"],
-        eval_dataset=tokenized_datasets["valid"],
+        eval_dataset=tokenized_datasets["validation"],
         data_collator=data_collator,
         tokenizer=tokenizer,
         compute_metrics=compute_metrics,
