@@ -18,7 +18,7 @@ def create_dataset(datasets, palm_type="VHHBERT"):
         "ProtBert",
     )
     if palm_type in ["VHHBERT", "VHHBERT-w/o-PT"]:
-        tokenizer = BertTokenizerFast.from_pretrained("tsurubee/VHHBERT")
+        tokenizer = BertTokenizerFast.from_pretrained("COGNANO/VHHBERT")
         tokenized_datasets = _preprocess(datasets, tokenizer, ["VHH_sequence", "token_type_ids"])
         return tokenized_datasets, tokenizer
     elif palm_type == "AbLang":

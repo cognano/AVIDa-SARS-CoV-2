@@ -60,7 +60,7 @@ class VhhBert(nn.Module):
 
     def __init__(self):
         super().__init__()
-        self.vhhbert = RobertaModel.from_pretrained("tsurubee/VHHBERT")
+        self.vhhbert = RobertaModel.from_pretrained("COGNANO/VHHBERT")
 
     def forward(self, input_ids=None, attention_mask=None):
         outputs = self.vhhbert(input_ids, attention_mask=attention_mask)
