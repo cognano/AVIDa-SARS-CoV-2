@@ -1,6 +1,6 @@
 # A SARS-CoV-2 Interaction Dataset and VHH Sequence Corpus for Antibody Language Models
 
-This repository contains the supplementary material accompanying the paper "A SARS-CoV-2 Interaction Dataset and VHH Sequence Corpus for Antibody Language Models."
+This repository contains the supplementary material accompanying the paper "[A SARS-CoV-2 Interaction Dataset and VHH Sequence Corpus for Antibody Language Models](https://arxiv.org/abs/2405.18749)."
 In this paper, we introduced AVIDa-SARS-CoV-2, a labeled dataset of SARS-CoV-2-VHH interactions, and VHHCorpus-2M, which contains over two million VHH sequences, providing novel datasets for the evaluation and pre-training of antibody language models.
 The datasets are available at https://datasets.cognanous.com under a CC BY-NC 4.0 license.
 
@@ -86,7 +86,7 @@ The pre-trained VHHBERT, released under the MIT License, is available on the [Hu
 ### Fine-tuning
 
 To evaluate the performance of various pre-trained language models for antibody discovery, we defined a binary classification task to predict the binding or non-binding of unknown antibodies to 13 antigens using AVIDa-SARS-CoV-2.
-For more information on the benchmarking task, see the paper.
+For more information on the benchmarking task, see the [paper](https://arxiv.org/abs/2405.18749).
 
 Fine-tuning of the language models can be performed using the following command.
 
@@ -123,5 +123,10 @@ python benchmarks/finetune.py --palm-type "VHHBERT" \
 If you use AVIDa-SARS-CoV-2, VHHCorpus-2M, or VHHBERT in your research, please use the following citation.
 
 ```bibtex
-TBD
+@article{tsuruta2024sars,
+  title={A {SARS}-{C}o{V}-2 Interaction Dataset and {VHH} Sequence Corpus for Antibody Language Models},
+  author={Hirofumi Tsuruta and Hiroyuki Yamazaki and Ryota Maeda and Ryotaro Tamura and Akihiro Imura},
+  journal={arXiv preprint arXiv:2405.18749},
+  year={2024}
+}
 ```
