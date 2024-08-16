@@ -22,7 +22,8 @@ class PalmForBindingPrediction(nn.Module):
             "AbLang",
             "AntiBERTa2",
             "AntiBERTa2-CSSP",
-            "ESM-2",
+            "ESM-2-150M",
+            "ESM-2-650M",
             "IgBert",
             "ProtBert",
         )
@@ -36,8 +37,10 @@ class PalmForBindingPrediction(nn.Module):
             self.palm = AntiBERTa2()
         elif palm_type == "AntiBERTa2-CSSP":
             self.palm = AntiBERTa2CSSP()
-        elif palm_type == "ESM-2":
-            self.palm = ESM2()
+        elif palm_type == "ESM-2-150M":
+            self.palm = ESM2_150M()
+        elif palm_type == "ESM-2-650M":
+            self.palm = ESM2_650M()
         elif palm_type == "IgBert":
             self.palm = IgBert()
         elif palm_type == "ProtBert":
@@ -154,11 +157,24 @@ class ProtBert(nn.Module):
         return vhh_embeddings
 
 
-class ESM2(nn.Module):
+class ESM2_150M(nn.Module):
 
     def __init__(self):
         super().__init__()
         self.ESM2 = AutoModel.from_pretrained("facebook/esm2_t30_150M_UR50D")
+
+    def forward(self, input_ids=None, attention_mask=None):
+        outputs = self.ESM2(input_ids, attention_mask=attention_mask)
+        last_hidden_states = outputs.last_hidden_state
+        vhh_embeddings = _mean_embeddings(last_hidden_states, attention_mask)
+        return vhh_embeddings
+
+
+class ESM2_650M(nn.Module):
+
+    def __init__(self):
+        super().__init__()
+        self.ESM2 = AutoModel.from_pretrained("facebook/esm2_t33_650M_UR50D")
 
     def forward(self, input_ids=None, attention_mask=None):
         outputs = self.ESM2(input_ids, attention_mask=attention_mask)
@@ -177,14 +193,17 @@ class ClassificationHead(nn.Module):
             "AbLang",
             "AntiBERTa2",
             "AntiBERTa2-CSSP",
-            "ESM-2",
+            "ESM-2-150M",
+            "ESM-2-650M",
             "IgBert",
             "ProtBert",
         )
         if palm_type in ["AntiBERTa2", "AntiBERTa2-CSSP", "IgBert", "ProtBert"]:
             embedding_dim = 1024
-        elif palm_type == "ESM-2":
+        elif palm_type == "ESM-2-150M":
             embedding_dim = 640
+        elif palm_type == "ESM-2-650M":
+            embedding_dim = 1280
         else:
             embedding_dim = 768
         self.dense = nn.Linear(embedding_dim + 640, 768)

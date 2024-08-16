@@ -131,7 +131,7 @@ if __name__ == "__main__":
         "--palm-type",
         default="VHHBERT",
         type=str,
-        help="PALM type must be one of ['VHHBERT', 'VHHBERT-w/o-PT', 'AbLang', 'AntiBERTa2', 'AntiBERTa2-CSSP', 'ESM-2', 'IgBert', 'ProtBert'].",
+        help="PALM type must be one of ['VHHBERT', 'VHHBERT-w/o-PT', 'AbLang', 'AntiBERTa2', 'AntiBERTa2-CSSP', 'ESM-2-150M', 'ESM-2-650M', 'IgBert', 'ProtBert'].",
     )
     parser.add_argument(
         "--save-dir",

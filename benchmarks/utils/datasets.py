@@ -13,7 +13,8 @@ def create_dataset(datasets, palm_type="VHHBERT"):
         "AbLang",
         "AntiBERTa2",
         "AntiBERTa2-CSSP",
-        "ESM-2",
+        "ESM-2-150M",
+        "ESM-2-650M",
         "IgBert",
         "ProtBert",
     )
@@ -45,8 +46,12 @@ def create_dataset(datasets, palm_type="VHHBERT"):
         tokenizer = RoFormerTokenizer.from_pretrained("alchemab/antiberta2-cssp")
         tokenized_datasets = _preprocess(datasets, tokenizer, ["VHH_sequence", "token_type_ids"])
         return tokenized_datasets, tokenizer
-    elif palm_type == "ESM-2":
+    elif palm_type == "ESM-2-150M":
         tokenizer = AutoTokenizer.from_pretrained("facebook/esm2_t30_150M_UR50D")
+        tokenized_datasets = _preprocess(datasets, tokenizer, ["VHH_sequence"])
+        return tokenized_datasets, tokenizer
+    elif palm_type == "ESM-2-650M":
+        tokenizer = AutoTokenizer.from_pretrained("facebook/esm2_t33_650M_UR50D")
         tokenized_datasets = _preprocess(datasets, tokenizer, ["VHH_sequence"])
         return tokenized_datasets, tokenizer
     elif palm_type == "IgBert":

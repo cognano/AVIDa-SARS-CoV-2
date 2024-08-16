@@ -105,7 +105,8 @@ python benchmarks/finetune.py --palm-type "VHHBERT" \
 - `AntiBERTa2-CSSP`
 - `IgBert`
 - `ProtBert`
-- `ESM-2`
+- `ESM-2-150M`
+- `ESM-2-650M`
 
 **Arguments:**
 
