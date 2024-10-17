@@ -124,10 +124,10 @@ python benchmarks/finetune.py --palm-type "VHHBERT" \
 If you use AVIDa-SARS-CoV-2, VHHCorpus-2M, or VHHBERT in your research, please use the following citation.
 
 ```bibtex
-@article{tsuruta2024sars,
+@inproceedings{tsuruta2024sars,
   title={A {SARS}-{C}o{V}-2 Interaction Dataset and {VHH} Sequence Corpus for Antibody Language Models},
   author={Hirofumi Tsuruta and Hiroyuki Yamazaki and Ryota Maeda and Ryotaro Tamura and Akihiro Imura},
-  journal={arXiv preprint arXiv:2405.18749},
+  booktitle={Advances in Neural Information Processing Systems 37},
   year={2024}
 }
 ```
